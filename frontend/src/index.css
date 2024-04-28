@@ -21,6 +21,7 @@ header {
 main {
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .header-nav-links {
@@ -115,3 +116,10 @@ main {
   margin-bottom: 20px;
 }
 
+.margin-header-card {
+  margin: 60px 0px 0px -4px;
+}
+
+.cash {
+  font-size: 24px;
+}

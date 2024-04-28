@@ -1,0 +1,148 @@
+%flex-element-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%shadow-effect {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.link-style {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hover-gold:hover {
+  color: gold;
+}
+
+.about-container {
+  @extend %flex-element-center;
+  max-height: 455px;
+  
+  .about-flex-container{
+    display: flex;
+    max-width: 865px;
+    margin: 70px 0px 0 0;
+
+    .about-text-container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 55px;
+      margin-bottom: 30px;
+      
+      .align-self-center {
+        align-self: center;
+      }
+
+      .aboute-card-head {
+        font-size: 24px;
+      }
+
+      .aboute-card-text {
+        margin-top: 25px;
+        font-size: 14px;
+      }
+
+    }
+
+  }
+}
+
+.line-container {
+  @extend %flex-element-center;
+  
+  .line {
+    margin: 30px 0 60px 0;
+    width: 240px;
+    border: 1px solid black;
+    opacity: 0.8;
+  }
+}
+
+.search-container {
+  @extend %flex-element-center;
+
+  .input-container{
+    margin-right: 83px;
+
+    .label-space {
+      margin-right: 19px;
+    }
+
+    input {
+      text-align: center;
+      border: none;
+      border-radius: 4px;
+      @extend %shadow-effect;
+    }
+
+    input:hover {
+      border: 1px solid black;
+    }
+  }
+
+  span {
+    margin-right: 35px;
+  }
+
+  button {
+    border: none;
+    background-color: white;
+    @extend %shadow-effect;
+    margin-right: 5px;
+  }
+
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .btn-1 {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .btn-2 {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.card-box {
+  width: 220px;
+  height: 260px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .img-box {
+    margin-top: 30px;
+  }
+
+  h4 {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-bottom: 7px;
+  }
+}
+
+.box {
+  @extend %flex-element-center;
+
+  .cards-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 70px;
+    max-width: 800px;
+    margin-top: 60px;
+  }
+}

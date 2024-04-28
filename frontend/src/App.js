@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from './Components/MainPage';
-import CoffeePage from './Components/CoffeePage';
-import CoffeeItemPage from './Components/CoffeeItemPage';
+import MainPage from './Pages/MainPage';
+import CoffeePage from './Pages/CoffeePage';
+import CoffeeItemPage from './Pages/CoffeeItemPage';
 
 
 function App() {
