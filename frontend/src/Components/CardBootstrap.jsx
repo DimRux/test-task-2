@@ -6,7 +6,7 @@ const CardBootstrap = ({ img, title, price }) => {
     <Link to='/coffeeItem' className='link-style'>
       <div className='card-container'>
         <Card className='my-card'>
-          <Card.Img variant="top" src={img} className='img-card mx-auto' />
+          <Card.Img variant="top" src={img} className='img-card mx-auto' alt='coffee card' />
           <Card.Body>
             <Card.Title className='font-size-14'>{title}</Card.Title>
             <Card.Text className='font-size-14 text-end'>{price}</Card.Text>

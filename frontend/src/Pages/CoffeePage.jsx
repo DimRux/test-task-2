@@ -105,7 +105,7 @@ const CoffeePage = () => {
       <div className='box'>
         <div className='cards-box'>
           {cards
-            .filter(({ country }) => country.startsWith(myValue))
+            .filter(({ country }) => country.toLowerCase().startsWith(myValue.toLowerCase()))
             .map(({ img, header, country, price }) => <Card img={img} header={header} country={country} price={price} key={uniqueId()} />)}
         </div>
       </div>

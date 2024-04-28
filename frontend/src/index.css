@@ -99,8 +99,8 @@ main {
 }
 
 .cards-container {
-  justify-content: space-between;
-  margin-left: 248px;
+  justify-content: center;
+  gap: 70px;
   max-width: 802px;
 }
 
@@ -109,7 +109,7 @@ main {
 }
 
 .footer-nav-links {
-  margin: 52px 0 30px 510px;
+  margin: 52px 0 30px 40px;
 }
 
 .footer-logo-margin {

@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Navbar data-bs-theme="dark" className="p-0">
-            <Container className="p-0 m-0">
+            <Container className="p-0 m-0 justify-content-center">
               <Row className="m-0">
                 <Col xs={1} className="footer-nav-links p-0">
                   <Navbar.Brand href="#" className="p-0  position-relative margin-nav-link font-size-12" style={{ color: "black" }}>

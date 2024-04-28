@@ -8,6 +8,23 @@ import { ReactComponent as BeansLogoBlack } from '../images/BeansLogoBlack.svg';
 import mainHeaderLogo from '../images/mainHeaderLogo.png';
 import paper from '../images/paper.png';
 
+const Text = () => (
+  <>
+    <p className="text-center font-size-14 margin-section-two">
+      Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.<br />
+      Afraid at highly months do things on at. Situation recommend objection do intention<br />
+      so questions. As greatly removed calling pleased improve an. Last ask him cold feel<br />
+      met spot shy want. Children me laughing we prospect answered followed. At it went<br />
+      is song that held help face.<br />
+      <br />
+      Now residence dashwoods she excellent you. Shade being under his bed her, Much<br />
+      read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant<br />
+      horrible but confined day end marriage. Eagerness furniture set preserved far<br />
+      recommend. Did even but nor are most gave hope. Secure active living depend son<br />
+      repair day ladies now.</p>
+  </>
+)
+
 
 const MainPage = () => {
   const cards = [
@@ -51,18 +68,7 @@ const MainPage = () => {
             <BeansLogoBlack />
           </Row>
           <Row className='m-0 p-0'>
-            <p className="text-center font-size-14 margin-section-two">
-              Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.<br />
-              Afraid at highly months do things on at. Situation recommend objection do intention<br />
-              so questions. As greatly removed calling pleased improve an. Last ask him cold feel<br />
-              met spot shy want. Children me laughing we prospect answered followed. At it went<br />
-              is song that held help face.<br />
-              <br />
-              Now residence dashwoods she excellent you. Shade being under his bed her, Much<br />
-              read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant<br />
-              horrible but confined day end marriage. Eagerness furniture set preserved far<br />
-              recommend. Did even but nor are most gave hope. Secure active living depend son<br />
-              repair day ladies now.</p>
+            <Text />
           </Row>
         </Container>
       </section>
@@ -71,8 +77,8 @@ const MainPage = () => {
           <Row className='m-0 p-0'>
             <h3 className="text-center font-size-24 margin-section-three">Our best</h3>
           </Row>
-          <Row className='m-0 p-0'>
-            <CardGroup className='cards-container'>
+          <Row className='m-0 p-0 d-flex justify-content-center'>
+            <CardGroup className='cards-container justify-content-center'>
               {cards.map(({ img, title, price }) => <CardBootstrap img={img} title={title} price={price} key={uniqueId()} />)}
             </CardGroup>
           </Row>
