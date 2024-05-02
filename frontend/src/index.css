@@ -21,7 +21,8 @@ header {
 main {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  color: white;
 }
 
 .header-nav-links {

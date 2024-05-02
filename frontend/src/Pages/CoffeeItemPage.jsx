@@ -1,7 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
 import Header from '../Components/Header';
 import About from '../Components/About';
-import Footer from '../Components/Footer';
 import mainCardBg from '../images/mainCardBg.png';
 
 
@@ -20,8 +19,8 @@ const Text = () => (
 
 const CoffeeItemPage = () => {
   return (
-    <Container fluid maxWidth='1440x' className='p-0'>
-      <main className="bg-image" style={{ backgroundImage: `url(${mainCardBg})`, height: '260px', color: "white", 'background-repeat': 'no-repeat' }}>
+    <Container fluid maxwidth='1440x' className='p-0'>
+      <main className="bg-image" style={{ backgroundImage: `url(${mainCardBg})`, height: '260px' }}>
         <Container>
           <Row>
             <Header />
@@ -32,7 +31,6 @@ const CoffeeItemPage = () => {
         </Container>
       </main>
       <About img={require('../images/cardImg1.jpg')} head='Aboute it' text={<Text />} />
-      <Footer />
     </Container>
   )
 }

@@ -1,12 +1,13 @@
+import { useContext } from 'react';
 import { Button, Container, Row, Col, CardGroup } from 'react-bootstrap';
 import uniqueId from 'lodash/uniqueId.js';
 import Header from '../Components/Header';
 import CardBootstrap from '../Components/CardBootstrap';
-import Footer from '../Components/Footer';
 import { ReactComponent as BeansLogoWhite } from '../images/BeansLogo.svg';
 import { ReactComponent as BeansLogoBlack } from '../images/BeansLogoBlack.svg';
 import mainHeaderLogo from '../images/mainHeaderLogo.png';
 import paper from '../images/paper.png';
+import CardsContext from '../context/CardsContext';
 
 const Text = () => (
   <>
@@ -27,15 +28,12 @@ const Text = () => (
 
 
 const MainPage = () => {
-  const cards = [
-    { img: require('../images/mainCard1.png'), title: 'Solimo Coffee Beans 2 kg', price: '10.73$' },
-    { img: require('../images/mainCard2.png'), title: 'Presto Coffee Beans 1 kg', price: '15.99$' },
-    { img: require('../images/mainCard3.png'), title: 'Solimo Coffee Beans 2 kg', price: '6.99$' },
-  ];
+  const allCards = useContext(CardsContext);
+  const cards = allCards.filter((card) => !card?.country);
 
   return (
     <Container fluid maxwidth='1440x' className='p-0'>
-      <main className="bg-image" style={{ backgroundImage: `url(${mainHeaderLogo})`, height: '640px', color: "white" }}>
+      <main className="bg-image" style={{ backgroundImage: `url(${mainHeaderLogo})`, height: '640px' }}>
         <Container>
           <Row>
             <Header />
@@ -84,7 +82,6 @@ const MainPage = () => {
           </Row>
         </Container>
       </section>
-      <Footer />
     </Container>
   )
 }

@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import uniqueId from 'lodash/uniqueId.js';
 import Header from '../Components/Header';
 import About from '../Components/About';
 import Card from '../Components/Card';
-import Footer from '../Components/Footer';
 import mainCardBg from '../images/mainCardBg.png';
+import CardsContext from '../context/CardsContext';
 
 
 const Text = () => (
@@ -29,14 +29,8 @@ const Text = () => (
 
 
 const CoffeePage = () => {
-  const cards = [
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Brazil', price: '6.99$' },
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Kenya', price: '6.99$' },
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Columbia', price: '6.99$' },
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Brazil', price: '6.99$' },
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Brazil', price: '6.99$' },
-    { img: require('../images/cardImg.png'), header: 'AROMISTICO Coffee 1kg', country: 'Brazil', price: '6.99$' },
-  ]
+  const allCards = useContext(CardsContext);
+  const cards = allCards.filter((card) => card?.country);
 
   const [myValue, setValue] = useState('');
   const myRef = useRef();
@@ -69,8 +63,8 @@ const CoffeePage = () => {
   };
 
   return (
-    <Container fluid maxWidth='1440x' className='p-0'>
-      <main className="bg-image" style={{ backgroundImage: `url(${mainCardBg})`, height: '260px', color: "white", 'background-repeat': 'no-repeat' }}>
+    <Container fluid maxwidth='1440x' className='p-0'>
+      <main className="bg-image" style={{ backgroundImage: `url(${mainCardBg})`, height: '260px' }}>
         <Container>
           <Row>
             <Header />
@@ -97,9 +91,9 @@ const CoffeePage = () => {
         </div>
         <div>
           <span>Or filter</span>
-          <button onClick={onClickBrazil} className='btn-1'>Brazil</button>
-          <button onClick={onClickKenya}>Kenya</button>
-          <button onClick={onClickColumbia} className='btn-2'>Columbia</button>
+          <button onClick={onClickBrazil} className={myValue === 'Brazil' ? 'btn-1 act-btn' : 'btn-1'}>Brazil</button>
+          <button onClick={onClickKenya} className={myValue === 'Kenya' ? 'act-btn' : null}>Kenya</button>
+          <button onClick={onClickColumbia} className={myValue === 'Columbia' ? 'btn-2 act-btn' : 'btn-2'}>Columbia</button>
         </div>
       </div>
       <div className='box'>
@@ -109,7 +103,6 @@ const CoffeePage = () => {
             .map(({ img, header, country, price }) => <Card img={img} header={header} country={country} price={price} key={uniqueId()} />)}
         </div>
       </div>
-      <Footer />
     </Container>
   )
 }
