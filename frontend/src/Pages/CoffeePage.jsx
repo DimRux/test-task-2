@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import uniqueId from 'lodash/uniqueId.js';
 import Header from '../Components/Header';
 import About from '../Components/About';
 import Card from '../Components/Card';
@@ -100,7 +99,7 @@ const CoffeePage = () => {
         <div className='cards-box'>
           {cards
             .filter(({ country }) => country.toLowerCase().startsWith(myValue.toLowerCase()))
-            .map(({ img, header, country, price }) => <Card img={img} header={header} country={country} price={price} key={uniqueId()} />)}
+            .map(({ img, header, country, price, id }) => <Card img={img} header={header} country={country} price={price} key={id} />)}
         </div>
       </div>
     </Container>

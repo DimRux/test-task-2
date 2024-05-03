@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Button, Container, Row, Col, CardGroup } from 'react-bootstrap';
-import uniqueId from 'lodash/uniqueId.js';
 import Header from '../Components/Header';
 import CardBootstrap from '../Components/CardBootstrap';
 import { ReactComponent as BeansLogoWhite } from '../images/BeansLogo.svg';
@@ -77,7 +76,7 @@ const MainPage = () => {
           </Row>
           <Row className='m-0 p-0 d-flex justify-content-center'>
             <CardGroup className='cards-container justify-content-center'>
-              {cards.map(({ img, title, price }) => <CardBootstrap img={img} title={title} price={price} key={uniqueId()} />)}
+              {cards.map(({ img, title, price, id }) => <CardBootstrap img={img} title={title} price={price} key={id} />)}
             </CardGroup>
           </Row>
         </Container>
